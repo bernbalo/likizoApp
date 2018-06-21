@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/users.css'%}"
+{% endblock stylesheet %}
+{% block content %}
+
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12">
+        <table class="table table-sm">
+    <thead class="thead-inverse ">
+        <tr style="background-color:orange;text-shadow: 1px 1px gray;">
+            <th>Tendo</th>
+            <th> Aina ya Likizo</th>
+            <th>Mwanzo</th>
+            <th>Mwisho</th>
+            <th>Muda</th>
+            <th>Hali</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for le in user_leave %}
+        <tr {% if le.leave_expired %}class="table-danger" {% elif le.supervisor_approved and not le.manager_approved %}class="table-warning"
+            {% elif le.is_approved and le.leave_expired %}class="table-success"
+            {% else %} class="table-primary"
+            {% endif%} >
+            <td>
+                <a class="btn btn-sm btn-primary" href="{% url 'edit_leave' le.id %}" role="button" {% if le.is_approved %}
+                   style="display:none"
+                   {%endif%}>Boresha</a>
+                <a class="btn btn-sm btn-danger" href="{% url 'delete_leave' le.id %}" role="button"
+                {% if le.is_approved %}
+                   style="display:none"
+                   {%endif%}
+                >Futa</a>
+
+
+            </td>
+            <td>{{le.leave_type}}</td>
+            <td>{{ le.start_date}}</td>
+            <td {% if le.leave_expired %} class="table-danger"{% endif%}>{{ le.end_date }}</td>
+            <td>{{ le.duration }}</td>
+             <td>{% if le.is_approved %} Umeruhusiwa{% else %} Subiri {% endif %}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+        </table>
+    {%endblock content%}

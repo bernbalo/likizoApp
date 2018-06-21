@@ -1,0 +1,21 @@
+
+<table class="table">
+    <thead class="thead-inverse ">
+        <tr style="background-color:orange;text-shadow: 1px 1px gray;">
+            <th> Aina ya Likizo</th>
+            <th>Mwanzo</th>
+            <th>Mwisho</th>
+            <th>Muda</th>
+            <th>Hali</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for le in user_leave %}
+        <tr>
+            <td>{{le.leave_type}}</td>
+            <td>{{ le.start_date}}</td>
+            <td></td>
+            <td>{{ le.duration }}</td>
+            <td>{% if le.is_approved %} Umeruhusiwa{% else %} Subiri {% endif %}</td>
+        </tr>
+        {% endfor %}

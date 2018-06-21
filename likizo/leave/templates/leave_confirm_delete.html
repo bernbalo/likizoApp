@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/users.css' %}">
+{% endblock %}
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="{% url 'list_users' %}">Mlolongo wa likizo</a></li>
+<li class="breadcrumb-item active">Futa</li>
+{% endblock breadcrumb%}
+{% block content %}
+
+<div class="row justify-content-center">
+<div class="col-lg-4 col-md-6 col-sm-8">
+<div class="card">
+<div class="card-body">
+<h3 class="card-title">Futa</h3>
+    <p>Unauhakika unatakakufuta taarifa za {{ object }}..?</p>
+<form method="post" novalidate>
+{% csrf_token %}
+{% include 'includes/forms.html' %}
+<button type="cancel" class="btn btn-primary btn-block">
+Hapana, Ghaira
+</button>
+
+    <button type="submit" class="btn btn-danger btn-block">
+Ndiyo, Futa
+</button>
+
+</form>
+</div>
+<div class="card-footer text-muted text-center">
+
+</div>
+</div>
+<div class="text-center py-2">
+</div>
+</div>
+</div>
+
+{% endblock %}

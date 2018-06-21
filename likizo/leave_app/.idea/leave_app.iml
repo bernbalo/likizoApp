@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../leave">
+      <sourceFolder url="file://$MODULE_DIR$/../leave/leave" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../leave/home" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../leave/leave_app" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../leave/accounts" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 3.6 (venv)" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
+  </component>
+</module>

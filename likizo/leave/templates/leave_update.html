@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/users.css'%}"
+{% endblock stylesheet %}
+{% block content %}
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12">
+        <div class="card">
+        <div class="card-body">
+        <h3 class="card-title">Fanya maboresho </h3>
+<form method="post" novalidate>
+{% csrf_token %}
+{% include 'conditional_form.html' %}
+<button type="submit" class="btn btn-primary btn-block">Boresha</button>
+</form>
+    </div>
+    <div class="card-footer text-muted text-center">
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock content%}

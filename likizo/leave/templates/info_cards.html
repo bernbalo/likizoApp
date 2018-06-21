@@ -1,0 +1,27 @@
+<div class="card-deck mb-2">
+  <div class="card">
+      <h5 class="card-header">Profile</h5>
+    <div class="card-body text-justify">
+      <p class="card-text">Name: {{ user.get_full_name }}
+      <br>PF: {{ user.PF_number }}</br>
+      Title: {{ user.title }}</p>
+    </div>
+  </div>
+  <div class="card">
+      <h5 class="card-header">Department</h5>
+    <div class="card-body text-justify">
+      <p class="card-text">Name: {{ user.department }}
+        <br>Head of department:  {{ user.department.department_head }}</br>
+        PF:  {{ user.PF_number }}</p>
+    </div>
+  </div>
+  <div class="card">
+    <h5 class="card-header">Control officer</h5>
+    <div class="card-body text-justify">
+      <p class="card-text">Name: {{ manager.get_full_name }}
+      <br>PF: {{ manager.PF_number }}</br>
+      Title: {{ manager.title }}
+        </p>
+    </div>
+  </div>
+</div>
